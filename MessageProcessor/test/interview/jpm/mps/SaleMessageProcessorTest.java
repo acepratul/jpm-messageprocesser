@@ -83,6 +83,7 @@ public class SaleMessageProcessorTest {
 		
 		//Then
 		register.logProcessedProducts();
+		assertEquals(3, register.getAvailableProducts().size());
 		
 	}
 	
@@ -107,8 +108,8 @@ public class SaleMessageProcessorTest {
 		messageProcessor.process(message7);
 		
 		//Then
-		register.logProcessedProducts();
 		register.logProductAdjustments();
+		assertEquals(3, register.getProductAdjustments().size());
 		
 	}
 
